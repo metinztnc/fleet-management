@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: tfmbackend
+  datasource:
+    url: jdbc:postgresql://postgres-db:5432/tfm
+    username: tfm
+    password: tfm
+    initialization-mode: always
+  jpa:
+    properties:
+      org.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+      hibernate.enable_lazy_load_no_trans: false
+    show-sql: true
+    hibernate:
+      use-new-id-generator-mappings: true
+      ddl-auto: create
+    open-in-view: false
+    generate-ddl: true

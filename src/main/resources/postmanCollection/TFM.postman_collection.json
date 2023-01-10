@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "222c9892-975b-49c7-9231-74ec141e2f06",
+		"name": "TFM_Postman_Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "distribute",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"route\": [\n    {\n      \"deliveryPoint\": 1,\n      \"deliveries\": [\n        {\"barcode\": \"P7988000121\"},\n        {\"barcode\": \"P7988000122\"},\n        {\"barcode\": \"P7988000123\"},\n        {\"barcode\": \"P8988000121\"},\n        {\"barcode\": \"C725799\"}\n      ]\n    },\n    {\n      \"deliveryPoint\": 2,\n      \"deliveries\": [\n        {\"barcode\": \"P8988000123\"},\n        {\"barcode\": \"P8988000124\"},\n        {\"barcode\": \"P8988000125\"},\n        {\"barcode\": \"C725799\"}\n      ]\n    },\n    {\n      \"deliveryPoint\": 3,\n      \"deliveries\": [\n        {\"barcode\": \"P9988000126\"},\n        {\"barcode\": \"P9988000127\"},\n        {\"barcode\": \"P9988000128\"},\n        {\"barcode\": \"P9988000129\"},\n        {\"barcode\": \"P9988000130\"}\n      ]\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/vehicles/34TL34/distribute",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"vehicles",
+						"34TL34",
+						"distribute"
+					]
+				},
+				"description": "Distribute the shipment to the delivery points"
+			},
+			"response": []
+		},
+		{
+			"name": "health",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/actuator/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"health"
+					]
+				},
+				"description": "Distribute the shipment to the delivery points"
+			},
+			"response": []
+		}
+	]
+}

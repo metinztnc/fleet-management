@@ -1,0 +1,28 @@
+version: '3'
+services:
+  app:
+    container_name: tfmbackend-container
+    image: tfmbackend
+    build: ./
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres-db
+    networks:
+      - ty-network
+    environment:
+      DATASOURCE_HOST: postgres-db
+  postgres-db:
+    image: postgres:latest
+    container_name: postgres-db
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: tfm
+      POSTGRES_PASSWORD: tfm
+      POSTGRES_DB: tfm
+    networks:
+      - ty-network
+networks:
+  ty-network:
